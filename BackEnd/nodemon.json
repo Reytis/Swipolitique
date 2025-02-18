@@ -1,0 +1,6 @@
+{
+    "watch": ["index.js", "routes/", "controllers/", "models/", "config/", "middleware/"],
+    "ext": "js,json",
+    "exec": "node --experimental-specifier-resolution=node index.js"
+}
+  

@@ -1,0 +1,49 @@
+.match__profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.match__profile:hover {
+    background: var(--bg-dark);
+}
+.profile__pictures {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.new__match__profile {
+    outline: solid 2px var(--main);
+}
+.match__profile p {
+    font-size: 16px;
+}
+
+.match {
+    padding-top: 32px;
+    padding-bottom: 64px;
+    width: calc(100% - 24px);
+    height: 100vh;
+}
+.match__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 4px;
+    width: 100%;
+}
+.new__match {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    background: var(--main);
+}

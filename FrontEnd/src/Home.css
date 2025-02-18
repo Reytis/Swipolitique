@@ -1,0 +1,123 @@
+.home__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.profile__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100vw;
+    margin: 8px 12px;
+}
+.img__carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    overflow: hidden;
+    border-radius: 12px;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile__slide__infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.profile__slide__infos__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+.verif__state {
+    display: flex;
+    align-items: center;
+}
+.name {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+}
+.profile__slide__infos__datas {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+.datas {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--white);
+
+    margin-right: 12px;
+}
+.datas svg {
+    width: 20px;
+    height: 20px;
+}
+.verif__state.verified svg path, .verif__state.verified svg rect{
+    fill: var(--main);
+}
+
+.left, .right {
+    background: red;
+    opacity: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+
+.indicator {
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(255,250,250,0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.segment {
+    margin-top: 10px;
+    flex: 1;
+    height: 4px;
+    background-color: var(--white);
+    opacity: 0.5;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.segment.active {
+    opacity: 1;
+}
+
+.img__carousel {
+    position: relative;
+    touch-action: none; 
+    will-change: transform;
+}

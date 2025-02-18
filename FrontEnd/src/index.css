@@ -1,0 +1,510 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --white: #fff;
+  --white-bis: #e1e6e4;
+  --white-bis-dark: #bcbebd;
+  --main: #28f9c7;
+  --main-bis: #25b694;
+  --main-bis50: #172f297c;
+  --main-dark:  #172f29;
+  --black: #000;
+  --bg: #272727;
+  --bg-dark: #1d1d1d;
+  --error: #cd3838;
+}
+
+body, #root {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+
+  background: var(--bg);
+  color: var(--white);
+}
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: var(--bg-dark);
+}
+
+ul, ol {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+  padding: 0;
+}
+li {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  color: var(--main);
+  fill: var(--main)
+}
+.active path, .active rect {
+  fill: var(--main)
+}
+.arrow__svg path {
+  stroke: var(--black);
+}
+.dynamic__header .arrow__svg path {
+  stroke: var(--white);
+}
+.block__svg rect {
+  stroke: var(--black);
+}
+.notif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 4px;
+  width: 14px;
+  height: 14px;
+
+  font-weight: 900;
+  line-height: 0%;
+  background: var(--main-dark);
+  color: var(--main);
+
+  position: absolute;
+  top: -6px;
+  right: -8px;
+}
+
+h1 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+
+  color: var(--white);
+}
+h1 svg {
+  margin: 0 12px;
+}
+.dynamic__header {
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  padding: 12px 0;
+  margin: 0;
+  z-index: 2;
+
+  width: calc(100% - 20px);
+  justify-content: space-between;
+  background: var(--bg);
+}
+.dynamic__header svg {
+  margin: 0;
+}
+.back {
+  cursor: pointer;
+}
+
+p {
+  color: var(--white);
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+button svg path, button svg {
+  fill: var(--black);
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  padding: 12px 16px;
+  margin: 8px 6px;
+  border-radius: 12px;
+  gap: 8px;
+  outline: none;
+  border: none;
+
+  background: var(--white);
+  transition: all .15s ease-in;
+}
+button:hover {
+  background: var(--white-bis);
+}
+
+button.main {
+  background: var(--main);
+}
+button.main:hover {
+  background: var(--main-bis);
+}
+button.danger {
+  color: var(--error);
+}
+button.danger svg path, button.danger svg {
+  fill: var(--error);
+}
+
+.swipe__precisions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 16px;
+  padding-bottom: 80px;
+}
+.bar__container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  background: var(--error);
+  position: relative;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 8px;
+  background: var(--main);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  left: 0;
+  font-size: 14px;
+  color: var(--white-bis);
+}
+
+.start-label {
+  position: relative;
+  left: 0;
+}
+
+.end-label {
+  position: relative;
+  right: 0;
+}
+
+.current-percentage {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.swipe__precisions .swipe__datas {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.swipe__precisions .swipe__datas div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+.swipe__precisions .swipe__datas div span {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+}
+body {
+  -ms-overflow-style: none;
+}
+
+.toggle__button {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  position: relative;
+  margin-right: 12px;
+  width: 32px;
+  height: 16px;
+  border-radius: 8px;
+  background: var(--white-bis-dark);
+}
+.toggle__circle {
+  position: absolute;
+  top: -4px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: all .15s ease;
+}
+
+.toggle.active {
+  background: var(--main);
+}
+.toggle.active .toggle__circle {
+  left: calc(100% - 16px);
+}
+
+.switch__selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.options {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid var(--white);
+}
+.option {
+  padding: 8px 12px;
+  display: flex;
+  cursor: pointer;
+  border-left: 2px solid var(--white);border-right: 2px solid var(--white);
+}
+.option:hover {
+  background: var(--bg-dark);
+}
+
+.option:first-child, .option:last-child {
+  border: 0;
+}
+.option path, .option rect {
+  opacity: .4;
+}
+
+.option.active path, .option.active rect {
+  fill: var(--white);
+  opacity: 1;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-track {
+  height: 8px;
+  width: calc(100% - 20px);
+  border-radius: 4px;
+  transform: translateX(10px);
+}
+
+.slider-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.output {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.conversations {
+  width: calc(100% - 20px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.messages {
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+.message {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+.message__mine {
+  flex-direction: row-reverse;
+}
+.message__picture {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.message__date {
+  position: relative;
+  left: 72px;
+  width: 100%;
+  font-size: 12px;
+  color: var(--white-bis-dark);
+}
+.message__date.mine {
+  right: 72px;
+  left: auto;
+  display: flex;
+  justify-content: end;
+}
+.message__bulle {
+  width: fit-content;
+  max-width: calc(100% - 92px);
+  background: var(--main-dark);
+  padding: 12px;
+  border-radius: 12px;
+}
+.message__bulle p {
+  word-break: break-all;
+}
+
+.dynamic__header__profile {
+  cursor: pointer;
+}
+
+.chat__input {
+  background: var(--bg-dark);
+  padding: 8px;
+  bottom: 108px;
+  position: fixed;
+  width: calc(100% - 36px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+.chatInput__btn {
+  background: none;
+  margin: 0;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatInput__btn:hover {
+  background: var(--bg);
+
+}
+.chatInput__btn svg, .chatInput__btn svg path {
+  fill: var(--white);
+}
+input[type="text"] {
+  width: 100%;
+  background: none;
+  border: 0px;
+  color: var(--white);
+  font-size: 16px;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+input[type="number"] {
+  width: 100%;
+  background: none;
+  border: 0px;
+  color: var(--white);
+  font-size: 16px;
+}
+input[type="number"]:focus {
+  outline: none;
+}
+.number__input, .text__input {
+  width: calc(100% - 16px);
+}
+.number__input input[type="number"], .text__input input[type="text"] {
+  border: 2px solid var(--white);
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.switch__selector__side {
+  font-size: 16px;
+  width: 100%;
+}
+.switch__selector__side .options {
+  width: 100%;
+  color: var(--white-bis-dark);
+}
+.switch__selector__side .options .active {
+  color: var(--white);
+}
+input[type="file"] {
+  display: none;
+}
+.file__input {
+  position: relative;
+  width: 100%;
+}
+.main__img .file__input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.file__input img {
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+}
+.file__input label {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  border-radius: 12px;
+  height: 100%;
+  background: var(--main-bis50);
+}
